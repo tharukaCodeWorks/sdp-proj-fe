@@ -1,60 +1,44 @@
-import React, { FC } from 'react';
-import { Drawer, AppBar, Toolbar, List, ListItem, ListItemIcon, ListItemText, Typography, Box, Breadcrumbs, Link } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import DashboardIcon from '@mui/icons-material/Dashboard';
+import React, { FC } from "react";
+import { Box } from "@mui/material";
+import { PieChart } from "../../components/charts";
+import { SystemUserLayout } from "../../components/layouts/sys-user-layout/SystemUserLayout";
+import BarChart from "../../components/charts/BarChart";
+import TileCard from "../../components/charts/TileCard";
+import { Paper } from "@mui/material";
 
-const drawerWidth = 240;
+// const drawerWidth = 240;
 
-export const MainDashboardPage:FC=()=> {
+export const MainDashboardPage: FC = () => {
   return (
-    <Box sx={{ display: 'flex' }}>
-      <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
-        <Toolbar>
-          <Typography variant="h6" noWrap>
-            Dashboard
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <SystemUserLayout>
+      <Box sx={{ display: "flex", gap: "1rem", mb: 2 }}>
+        <Box sx={{ flex: 1 }}>
+          <TileCard title="Total No of Complaints Today" noOfComplaints={15} />
+        </Box>
 
-      <Drawer
-        variant="permanent"
+        <Box sx={{ flex: 1 }}>
+          <TileCard title="Total No of Complaints Today" noOfComplaints={15} />
+        </Box>
+      </Box>
+
+      <Box
         sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+          display: "flex",
+          height: "300px",
+          gap: "1rem",
         }}
       >
-        <Toolbar />
-        <Box sx={{ overflow: 'auto' }}>
-          <List>
-            {/* Add additional items here */}
-            <ListItem button>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
-              <ListItemText primary="Dashboard" />
-            </ListItem>
-          </List>
+        <Box sx={{ flex: 1, gap: "1rem" }}>
+          <Paper elevation={3} sx={{ width: "100%", height: "100%" }}>
+            <PieChart />
+          </Paper>
         </Box>
-      </Drawer>
-
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar />
-        <Breadcrumbs aria-label="breadcrumb">
-          <Link underline="hover" color="inherit" href="/">
-            Home
-          </Link>
-          {/* Add additional breadcrumb links here */}
-        </Breadcrumbs>
-        {/* Main content goes here */}
+        <Box sx={{ flex: 1 }}>
+          <Paper elevation={3} sx={{ width: "100%", height: "100%" }}>
+            <BarChart />
+          </Paper>
+        </Box>
       </Box>
-    </Box>
+    </SystemUserLayout>
   );
-}
-
+};
