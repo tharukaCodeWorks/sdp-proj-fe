@@ -18,7 +18,7 @@ const AboutUs: FC = () => {
         </Typography>
 
         <Typography variant="body1" paragraph>
-          Our mission is to [provide a concise statement of your organization's mission and goals]. We strive to [highlight key objectives or values].
+          Our missionn is to [provide a concise statement of your organization's mission and goals]. We strive to [highlight key objectives or values].
         </Typography>
 
         <Typography variant="body1" paragraph>
