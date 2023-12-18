@@ -171,7 +171,7 @@ export const PublicDashboardPage: FC = () => {
   maxWidth="md"
   sx={{
     border: '4px solid #87ceeb', // Sky Blue
-    borderRadius: '8px',
+    borderRadius: '9px',
     marginRight: '16px', // Adjust as needed
     padding: 0, // Set padding to 0
     backgroundColor: 'white',
@@ -217,7 +217,10 @@ const CardComponent: FC<{ title: string; content: string; buttonText: string }> 
           </Button>
         </Box>
       </CardContent>
-    </Card>
+    </Card> 
   );
 };
+
+
+
   
