@@ -220,3 +220,4 @@ const CardComponent: FC<{ title: string; content: string; buttonText: string }> 
     </Card>
   );
 };
+  
