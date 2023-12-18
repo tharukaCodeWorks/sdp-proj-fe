@@ -10,7 +10,8 @@ export const loginFormValidationSchema = Yup.object({
 });
 
 export const signupFormValidationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
+  firstName: Yup.string().required("First Name is required"),
+  lastName: Yup.string().required("Last Name is required"),
   email: Yup.string()
     .email("Enter a valid email")
     .required("Email is required"),
