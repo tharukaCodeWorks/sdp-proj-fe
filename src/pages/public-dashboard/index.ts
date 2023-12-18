@@ -1,1 +1,2 @@
-export * from "./PublicDashboardPage"
+export * from "./PublicDashboardPage";
+export * from "./ComplaintsPage";
