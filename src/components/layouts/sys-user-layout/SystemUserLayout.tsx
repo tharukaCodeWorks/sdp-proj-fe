@@ -136,12 +136,6 @@ export const SystemUserLayout: FC<ISystemUserLayoutProps> = ({
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Home" />
-            </ListItem>
-            <ListItem button>
-              <ListItemIcon>
-                <DashboardIcon />
-              </ListItemIcon>
               <ListItemText primary="Dashboard" />
             </ListItem>
             <ListItem
